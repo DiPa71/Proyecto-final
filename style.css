@@ -1,0 +1,52 @@
+/* global */
+html{
+    font-size: 62.5%;
+}
+img{
+    max-width: 100%;
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}
+
+.cont{
+    height: 100%
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 3rem;
+}
+/*Lista de links*/
+.Serarch-bar{
+    background-color: chocolate;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+
+    
+}
+.logohdr{
+    background-image: url(../img/cooking-2132874_1920.jpg);
+    height: 100vh;
+    min-height: 60rem;
+    background-position: center center;
+    background-size: cover;
+}
+/* nav */
+.nav a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right: 2rem;
+    margin 2rem;
+}
