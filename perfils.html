@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
     <body>
-  
+
     <header class="site-header">
         <div class="contenedor contenido-header">
             <div class="barra">
@@ -32,28 +32,52 @@
                     <a href="contacto.html">Contacto</a>
                     <a href="carrito.html"><i class="fa fa-shopping-cart"></i>Carrito</a>
                     <a href="favoritos.html"><i class="fa fa-heart"></i>Favoritos / Deseados</a>
-                    <a href="perfill.html"> <i class="fa fa-user"></i>Login</a> / <a href="perfils.html"> <i class="fa fa-user"></i> Signin </a>
+                    <a href="perfill.html"> <i class="fa fa-user"></i>Login </a>  <a href="perfils.html"> <i class="fa fa-user"></i> Signin </a>
                 </nav>
             </div>
         </div>
 
     </header>
-            <main>
-                <form class="registrof" action="">
-                    <fieldset>
-                        <legend>Inicio de sesion</legend>
+        <main>
+            <form class="registrof" action="">
+                <fieldset>
+                    <legend>Datos de Registro:</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Nombre"required>
+                    <label for="apellido">Apellidos:</label>
+                    <input type="text" id="Apellidos" placeholder="Apellidos"required>
+                    <label for="nombre">Nombre de Usuario:</label>
+                    <input type="text" id="nombreusuario" placeholder="Nombre de Usuario"required>
+                    <label for="nombre">Contraseña</label>
+                    <input type="password" id="contraseña" placeholder="Contraseña"required>
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
 
-                        <label for="nombre">Usuario o Correo:</label>
-                        <input type="text" id="usuario" placeholder="Usuario o Correo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" placeholder="Teléfono" required>
 
-                        <label for="email">Contraseña: </label>
-                        <input type="password" id="contraseña" placeholder="Contraseña" required>
-                    </fieldset>
-                    <div class="registro">
-                        <input type="submit" value="iniciar sesion" class="boton boton-verde">
-                    </div>
-                </form>
-            </main>
+
+                    <label for="opciones">Pais:</label>
+                    <select id="opciones">
+                        <option value="" disabled selected>-- Seleccione --</option>
+                        <option value="mx">Mexico</option>
+                        <option value="usd">USA</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <label for="opciones">Divisa de pago:</label required>
+                    <select id="opciones">
+                        <option value="" disabled selected>-- Seleccione --</option>
+                        <option value="dolarcan">CAD</option>
+                        <option value="pesomx">MXN</option>
+                        <option value="dolarusa">USD</option>
+                        <option value="yen">JPY</option>
+                    </select>
+                </fieldset>
+                <div class="registro">
+                    <input type="submit" value="Registrar" class="boton boton-verde">
+                </div>
+            </form>
+        </main>
     <footer class="site-footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
@@ -64,7 +88,7 @@
             <p class="copyright">Todos los Derechos Reservados 2020 &copy; </p>
         </div>
     </footer>
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="/__/firebase/6.2.0/firebase-app.js"></script>
@@ -74,3 +98,6 @@
   <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
     </body>
 </html>
+
+
+<!--
