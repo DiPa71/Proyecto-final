@@ -25,6 +25,9 @@ img {
     max-width: 120rem; /** = 1200px; **/
     margin: 0 auto;
 }
+.contenedor2{
+    padding-bottom: 20rem;
+}
 h1 {
     font-size: 3.8rem;
 }
@@ -76,6 +79,7 @@ h4 {
         flex: 0 0 auto;
     }
 }
+
 .boton:hover {
     cursor: pointer;
 }
