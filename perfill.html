@@ -47,10 +47,10 @@
                         <input type="text" id="usuario" placeholder="Usuario o Correo">
 
                         <label for="email">Contraseña: </label>
-                        <input type="password" id="contraseña" placeholder="Contraseña" required>
+                        <input type="password" id="contrasenia" placeholder="Contraseña" required>
                     </fieldset>
                     <div class="registro">
-                        <input type="submit" value="iniciar sesion" class="boton boton-verde">
+                      <button onclick="login()" class="btn btn-primary btn-lg"> Iniciar sesion</button>
                     </div>
                 </form>
             </main>
@@ -72,5 +72,29 @@
   <!-- Add Firebase products that you want to use -->
   <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
   <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAh9nVDMO5MUL7254tBipIzUYnOjEbJMS4",
+    authDomain: "tolito-d4eea.firebaseapp.com",
+    databaseURL: "https://tolito-d4eea.firebaseio.com",
+    projectId: "tolito-d4eea",
+    storageBucket: "tolito-d4eea.appspot.com",
+    messagingSenderId: "792759908074",
+    appId: "1:792759908074:web:244abf8f68155b6037c993",
+    measurementId: "G-L33M7L15RH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src=index.js></script>
     </body>
 </html>
