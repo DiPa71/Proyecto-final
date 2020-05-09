@@ -1,10 +1,27 @@
 <?php 
 session_start();
 if(isset($_SESSION['usuario'])){
-    include_once 'includes/templades/headerloget.php';
-}else{
-    include_once 'includes/templades/header.php';
-}?>	
+    include_once 'includes/templades/headerloget.php';?>
+    <div class="contenedor-login">
+        <div class="loginbks login-d">
+            <h3><p>La mejor Pagina en venta de Tamales</p><p>¡UNETE!</p></h3>
+        </div>
+        <div class="login-i anuncio1">
+            <nav class="singlog sombratxt">
+                <a href="perfill.php">Inicio sesion</a>
+                <a href="perfils.php">Registro sesion</a>
+            </nav>
+            <hr>
+            <div class="">
+                <h2>Registro de sesion</h2>
+                <hr>
+                <p>Ya estas registrado, ¡Gracias por unirte a Tolito!</p>
+            </div>
+        </div>
+</div>
+<?php }else{
+    include_once 'includes/templades/header.php';?>
+
     <div id="login_div" class="main-div ">
           
         <div class="contenedor-login">
@@ -58,7 +75,7 @@ if(isset($_SESSION['usuario'])){
                                     </label>
                                 </div>
                                 <div class="campo">
-                                    <p>Selecciona tu Pais</p>
+                                    <label for="Pais">Selecciona tu Pais</label>
                                         <select name="pais" id="pais" value="-any-" required>
                                         <option>Seleccionar su país</option>
                                         <option value="ger">Alemania</option>
@@ -110,9 +127,8 @@ if(isset($_SESSION['usuario'])){
                     }
                     
                     ?>
+                    </div>
             </div>
-            </div>
-        </div>
-	</div>
-	
+    </div>
+	<?php } ?>	
     <?php include_once 'includes/templades/footer.php'?>

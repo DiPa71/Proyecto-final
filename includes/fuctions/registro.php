@@ -3,6 +3,7 @@
         if(isset($_POST['sumbit'])){
             require('db.php');
             $usuarioid = $_POST['username'] . $c = uniqid (rand (),true);
+            $imagen = '';
             $usuario = $_POST['username'];
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
@@ -75,7 +76,7 @@
                     header("Location: ../../perfils.php?error=Usuario_existente");
                     exit();
                 }else{
-                    $sql = "INSERT INTO users (id, usuario, nombre, apellido, correo, telefono, pass, pais, admins) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? )";
+                    $sql = "INSERT INTO users (id, imgpor , usuario, nombre, apellido, correo, telefono, pass, pais, admins) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
                     $stmt= mysqli_stmt_init($conn);
                     if(!mysqli_stmt_prepare($stmt, $sql)){
                         header("Location: ../../perfils.php?error=Error_SQL_code_002");
@@ -83,7 +84,7 @@
                     }else{
                         //$hashpws=password_hash($pass, PASSWORD_DEFAULT);
 
-                        mysqli_stmt_bind_param($stmt, "ssssssssi", $usuarioid, $usuario, $nombre, $apellido, $correo, $telefono,  $pass, $pais, $admin);
+                        mysqli_stmt_bind_param($stmt, "sssssssssi", $usuarioid, $imagen, $usuario, $nombre, $apellido, $correo, $telefono,  $pass, $pais, $admin);
                         mysqli_stmt_execute($stmt);
                         header("Location: ../../perfill.php?login=RegistroExitoso");
                         exit();

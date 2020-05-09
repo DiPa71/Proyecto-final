@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="main.js"></script>
 </head>
 <body>
 
     <header class="site-header inicio">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="img/tolito2.png" height="70px" alt="Logotipo de Tolito">
                 </a>
 
@@ -27,17 +29,17 @@
                 </div>
 
                 <nav id="navegacion" class="navegacion">
-                    <a href="index.html">Inicio</a>
+                    <a href="index.php">Inicio</a>
                     <a href="anuncios.php">Tienda</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-                    <a href="carrito.html"><i class="fa fa-shopping-cart"></i>  Carrito</a>
-                    <a href="favoritos.html"><i class="fa fa-heart"></i>  Favoritos / Deseados</a>
+                    <a href="blog.php">Blog</a>
+                    <a href="contacto.php">Contacto</a>
+                    <a href="carrito.php"><i class="fa fa-shopping-cart"></i>  Carrito</a>
+                    <a href="favoritos.php"><i class="fa fa-heart"></i>  Favoritos / Deseados</a>
                     <a href="perfill.php"> <i class="fa fa-user"></i>  Perfil</a>
                 </nav>
             </div>
 
             <h1>El tamal de tus sueños, a unos clicks de tu mesa ¡Conócenos!</h1>
-            <a href="nosotros.html" class="nosotros d-block">Nosotros</a>
+            <a href="nosotros.php" class="nosotros d-block">Nosotros</a>
         </div>
     </header>

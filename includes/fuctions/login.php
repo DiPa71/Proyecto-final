@@ -19,8 +19,9 @@ exit();
         if($row = mysqli_fetch_assoc($resultado)){
             if($pass == $row['pass']){
                 session_start();
-
+                $_SESSION['telefono']=$row['telefono'];
                 $_SESSION['usuario']=$row['usuario'];
+                $_SESSIOM['imgp']=$row['imgpor'];
                 $_SESSION['pass']=$row['pass'];
                 $_SESSION['id']=$row['id']; 
                 $_SESSION['admins']=$row['admins'];

@@ -1,9 +1,141 @@
 <?php session_start();
 if(isset($_SESSION['usuario'])){
-    include_once 'includes/templades/header_index_log.php';
-}else{
-    include_once 'includes/templades/header_index.php';
-}?>	
+    include_once 'includes/templades/header_index_log.php';?>
+        <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">¿Quienes somos?</h2>
+
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="img/mexico.svg" height="100px"alt="Icono Mexico">
+                <h3>100% Mexicanos</h3>
+                <p>Tamales realizados 100% por manos mexicanas, artesanales, de lo mejor de calidad a tu mesa, si querias una opción gourmet que ayude a los mexicanos, nos has encontrado.</p>
+            </div>
+
+            <div class="icono">
+                <img src="img/hand-wash.svg"height="100px" alt="Icono higiene">
+                <h3>Higiene</h3>
+                <p>En Tolito Inc. estamos preocupados por tu seguridad y salud, por lo que nos esforzamos en cumplir con las mas extrictas normas de salubridad vigentes a la fecha.</p>
+            </div>
+
+            <div class="icono">
+                <img src="img/binge-eating.svg"height="100px" alt="Icono sabor">
+                <h3>Tu sabor favorito</h3>
+                <p>No te limites a los típicos sabores, prueba y haz que tu paladar experimente nuevos sabores, te invitamos a conocer nuestro menú ampliado con el que disfrutaras un abanico de posibilidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="seccion contenedor">
+        <h2 class="fw-300 centrar-texto">Nuestra selección</h2>
+
+        <div class="contenedor-anuncios">
+            <div class="anuncio">
+                <img src="img/anuncio1.jpg" alt="Tamal de piña">
+                <div class="contenido-anuncio">
+                    <h3>Piña exótica</h3>
+                    <p>Exquisito tamal con base de piña de las islas Kawaii</p>
+                    <p class="precio">$4 USD</p>
+                    <div class="botonamarillo">
+                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
+                    </div>
+                    <div class="corazonmegusta">
+                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio2.jpg" alt="Tamal de habanero">
+                <div class="contenido-anuncio">
+                    <h3>Habanero spicy</h3>
+                    <p>Delicia culinaria, elaborada a base de chile habanero con toques de olivo</p>
+                    <p class="precio">$5.50 USD</p>
+
+                    <div class="botonamarillo">
+                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
+                    </div>
+                    <div class="corazonmegusta">
+                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio3.jpg" alt="Tamal pastor">
+                <div class="contenido-anuncio">
+                    <h3>Tamal al pastor </h3>
+                    <p>Recordemos dos de los mejores platillos de la comida mexicana con este homenaje</p>
+                    <p class="precio">$1.50 USD "OFERTA"</p>
+
+
+                    <div class="botonamarillo">
+                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
+                    </div>
+                    <div class="corazonmegusta">
+                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="ver-todas">
+            <button onclick="window.location.href='/anuncios.html'" class="">Ver Todos</button>
+        </div>
+    </main>
+
+    <section class="imagen-contacto">
+        <div class="contenedor contenido-contacto">
+            <h2>¡Enorme variedad!</h2>
+            <p>No te limites! tenemos una gran variedad de sabores, animate a probarlo</p>
+        </div>
+    </section>
+
+    <div class="seccion-inferior contenedor seccion">
+        <section class="blog">
+            <h3 class="centrar-texto fw-300">Nuestro Blog</h3>
+
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <img src="img/blog1.jpg" alt="Entrada de blog">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Recomendaciones de nuestro chef</h4>
+                    </a>
+                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Juan </span> </p>
+                    <p>¿Consejos para comer diferene? Nuestro chef especializado tiene la respuesta que buscas</p>
+                </div>
+            </article>
+
+            <article class="entrada-blog">
+                <div class="imagen">
+                    <img src="img/blog2.jpg" alt="Entrada de blog">
+                </div>
+                <div class="texto-entrada">
+                    <a href="entrada.html">
+                        <h4>Franquicias</h4>
+                    </a>
+                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Pablo </span> </p>
+                    <p>Adquiere una franquicia de Tolito Inc. ahora mismo, ¡enterate como!</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="testimoniales">
+            <h3 class="centrar-texto fw-300">Testimoniales</h3>
+            <div class="testimonial">
+
+                <blockquote>
+                    El personal se porto increiblemente bien, atención al cliente de 10. Sabores únicos y exquisitos, complementos de bebidas exquisitas y a temperatura perfecta, volveré sin duda.
+                </blockquote>
+                <p>- Ian Arias Dias</p>
+            </div>
+        </section>
+
+    </div>
+    
+<?php }else{
+    include_once 'includes/templades/header_index.php';?>
+	
 
     <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">¿Quienes somos?</h2>
@@ -136,16 +268,5 @@ if(isset($_SESSION['usuario'])){
         </section>
 
     </div>
-
-    <footer class="site-footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-            <p class="copyright">Todos los Derechos Reservados 2020 &copy; </p>
-        </div>
-    </footer>
-</body>
-</html>
+    <?php } ?>
+    <?php include_once 'includes/templades/footer.php'?>
