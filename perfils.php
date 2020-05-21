@@ -37,11 +37,47 @@ if(isset($_SESSION['usuario'])){
             <div class="">
             <h2>Registro de sesion</h2>
             <hr>
+            <?php 
+                    if(isset($_GET['error'])){
+                        if($_GET['error'] == "Campos_vacios"){
+                            echo '<p class="errores">Algun Campo esta Vacio</p>';
+                        }
+                        else if($_GET['error'] == "Usuario_no_admitido"){
+                            echo '<p class="errores">Caracteres no validos en Usuario</p>';
+                        }
+                        else if($_GET['error'] == "correo_mal_ingresado"){
+                            echo '<p class="errores">Correo invalido</p>';
+                        }
+                        else if($_GET['error'] == "Telefono_con_caracteres_invalidos"){
+                            echo '<p class="errores">Telefono invalido</p>';
+                        }
+                        else if($_GET['error'] == "Telefono_con_caracteres_invalidos"){
+                            echo '<p class="errores">Telefono invalido</p>';
+                        }
+                        else if($_GET['error'] == "Contraseñas_no_coinciden"){
+                            echo '<p class="errores">Las Contraseñas no Coinciden</p>';
+                        }
+                        else if($_GET['error'] == "Error_SQL_code_001"){
+                            echo '<p class="errores">Error SQL Codigo:01</p>';
+                        }
+                        else if($_GET['error'] == "Error_SQL_code_002"){
+                            echo '<p class="errores">Error SQL Codigo:02</p>';
+                        }
+                        else if($_GET['error'] == "Error_SQL_code_003"){
+                            echo '<p class="errores">Error SQL Codigo:03</p>';
+                        }
+                        else if($_GET['error'] == "Usuario_existente"){
+                            echo '<p class="errores">Usuario Ya Existente</p>';
+                        }
+                    }
+                    
+                    ?>
+                    <hr>
             <form class="" action="includes/fuctions/registro.php" method="POST" nctype="multipart/form-data" required>
                             <div class="datos-usuario">
                                 <div class="campo">
                                     <label for="usuario">Usuario:
-                                    <input type="text" name="username" id="user" placeholder="Nombre de Usuario -- solo a-z A-Z 0-9" required>
+                                    <input type="text" name="username" id="user" placeholder="Nombre de Usuario -- solo a-z A-Z 0-9" maxlength="15" required>
                                     </label>
                                 </div>
                                 <div class="campo">
@@ -92,41 +128,6 @@ if(isset($_SESSION['usuario'])){
                             <button type="sumbit" name="sumbit" id="sumbit" class="">Registrar</button>
                 </form>
                 <hr>
-                <?php 
-                    if(isset($_GET['error'])){
-                        if($_GET['error'] == "Campos_vacios"){
-                            echo '<p class="errores">Algun Campo esta Vacio</p>';
-                        }
-                        else if($_GET['error'] == "Usuario_no_admitido"){
-                            echo '<p class="errores">Caracteres no validos en Usuario</p>';
-                        }
-                        else if($_GET['error'] == "correo_mal_ingresado"){
-                            echo '<p class="errores">Correo invalido</p>';
-                        }
-                        else if($_GET['error'] == "Telefono_con_caracteres_invalidos"){
-                            echo '<p class="errores">Telefono invalido</p>';
-                        }
-                        else if($_GET['error'] == "Telefono_con_caracteres_invalidos"){
-                            echo '<p class="errores">Telefono invalido</p>';
-                        }
-                        else if($_GET['error'] == "Contraseñas_no_coinciden"){
-                            echo '<p class="errores">Las Contraseñas no Coinciden</p>';
-                        }
-                        else if($_GET['error'] == "Error_SQL_code_001"){
-                            echo '<p class="errores">Error SQL Codigo:01</p>';
-                        }
-                        else if($_GET['error'] == "Error_SQL_code_002"){
-                            echo '<p class="errores">Error SQL Codigo:02</p>';
-                        }
-                        else if($_GET['error'] == "Error_SQL_code_003"){
-                            echo '<p class="errores">Error SQL Codigo:03</p>';
-                        }
-                        else if($_GET['error'] == "Usuario_existente"){
-                            echo '<p class="errores">Usuario Ya Existente</p>';
-                        }
-                    }
-                    
-                    ?>
                     </div>
             </div>
     </div>

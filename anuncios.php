@@ -2,9 +2,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
 include_once 'includes/templades/headerloget.php';
-}else{
-include_once 'includes/templades/header.php';
-}?>
+?>
 
     <main class="seccion contenedor">
         <h2 class="fw-300 centrar-texto">Tamales Disponibles</h2>
@@ -42,15 +40,21 @@ include_once 'includes/templades/header.php';
                 foreach($fproductos as $producto) {?>
                 <div class="anuncio">
                 <div class="contenido-anuncio">
-                <?php echo '<img src=data:image;base64,'.base64_encode($producto['imagen']).' alt="Imagen producto">';?>}
+                <?php echo '<img src=data:image;base64,'.base64_encode($producto['imagen']).' alt="Imagen producto">';?>
                 <hr>
                     <h3><?php echo $producto['Producto']?></h3>
                     <p><?php echo $producto['Descripcion']?></p>
                     <p class="precio"><?php echo  '$ ' . $producto['Precio'] . ' MXN'?></p>
-                    <form action="includes/fuctions/anuncios.php" method="POST">
+                    <form action='carrito.php?pid=<?php echo $producto['Id'];?>' method="POST">
+                    <input type="hidden" name="pid" id="" value="<?php echo $producto['Id']; ?>">
+                    <input type="hidden" name="producto" id="" value="<?php echo $producto['Producto']; ?>">
+                    <input type="hidden" name="precio" id="" value="<?php  echo $producto['Precio']; ?>">
+                    <input type="hidden" name="descripcion" id="" value="<?php  echo $producto['Descripcion']; ?>">
+                    <label>Cantidad:
+                    <input type="text" name="cantidad" value="<?php echo 1; ?>" min="0" max="10" step="2">
+                    </label>
                     <div class="botonamarillo">
-                    <imput type="" name="productid" value="<?php $producto['id']; ?>">
-                        <button type="sumbit" name="añadir_carro"class="colorbtna" value="add to cart">Añadir a Carrito</button>
+                    <button type="sumbit" name="añadir_carro"class="colorbtna" value="agregar">Añadir a Carrito</button>
                     </div>
                     </form>
                     <form action="includes/fuctions/favoritos.php">
@@ -63,7 +67,13 @@ include_once 'includes/templades/header.php';
                 <?php } //fin foreach ?>
                 </div>
                 <hr>
-            <?php $conn->close()?>
-          </div>  
+                <?php $conn->close()?>
     </main>
+    <div class="rango-foot">
     <?php include_once 'includes/templades/footer.php'?>
+<?php }else{ 
+include_once 'includes/templades/header.php';?>
+
+
+
+<?php }?>

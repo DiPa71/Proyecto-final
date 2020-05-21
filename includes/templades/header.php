@@ -33,9 +33,9 @@
                     <a href="anuncios.php">Tienda</a>
                     <a href="blog.php">Blog</a>
                     <a href="contacto.php">Contacto</a>
-                    <a href="carrito.php"><i class="fa fa-shopping-cart"></i>  Carrito</a>
-                    <a href="favoritos.php"><i class="fa fa-heart"></i>  Favoritos / Deseados</a>
                     <a href="perfill.php"> <i class="fa fa-user"></i>  Perfil</a>
+                    <a href="favoritos.php"><i class="fa fa-heart"></i>  Favoritos / Deseados</a>
+                    <a href="carrito.php"><i class="fa fa-shopping-cart"></i>  Carrito</a>
                 </nav>
             </div>
         </div>

@@ -37,13 +37,7 @@ if(isset($_SESSION['usuario'])){
             <div class="">
             <h2>Inicio de sesion</h2>
             <hr>
-				<form action="includes/fuctions/login.php" method="POST">
-					<input type="text" placeholder="Usuario / Email" id="email_field" name="email_l" required>
-					<input type="password" placeholder="Contraseña" id="password_field" name="password_l" required>
-					<button type="sumbit" name="sumbit"class="">Iniciar sesion</button>
-                </form>	
-                <hr>
-                    <?php 
+            <?php 
                     if(isset($_GET['error'])){
                         if($_GET['error'] == "Campos_vacios"){
                             echo '<p class="errores">Algun Campo esta Vacio</p>';
@@ -52,12 +46,18 @@ if(isset($_SESSION['usuario'])){
                             echo '<p class="errores">Error SQL Codigo:03</p>';
                         }
                         else if($_GET['error'] == "ContraseñaErronea"){
-                            echo '<p class="errores">Contraseña erronea, Favor de verificar</p>';
+                            echo '<p class="errores">Contraseña o Usuario no coinciden, Favor de verificar</p>';
                         }
                         
                     }
                     
                     ?>
+            <hr>
+				<form action="includes/fuctions/login.php" method="POST">
+					<input type="text" placeholder="Usuario / Email" id="email_field" name="email_l" required>
+					<input type="password" placeholder="Contraseña" id="password_field" name="password_l" required>
+					<button type="sumbit" name="sumbit"class="">Iniciar sesion</button>
+                </form>
             </div>
             </div>
 	</div>

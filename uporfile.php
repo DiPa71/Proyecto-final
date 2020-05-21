@@ -1,6 +1,5 @@
 <?php
 session_start();
-$admin = $_SESSION['admins'];
 $usuario = $_SESSION['usuario'];
 //$imagen = $_SESSION['imgp'];
 $contraseña = $_SESSION['pass'];
@@ -11,12 +10,14 @@ $apellido = $_SESSION['apellido'];
 $correo = $_SESSION['correo'];
 $pais = $_SESSION['pais'];
 $telefono = $_SESSION['telefono'];
-
+//var_dump($_SESSION);
 //echo '<script arc="js/main.js"></script>';
 if(isset($_SESSION['usuario'])){
 include_once 'includes/templades/headerloget.php';
-if($admin = 1){?>
-	<div class="warp">
+switch($estado){
+
+    case 1: ?>
+        <div class="warp">
 		<ul class="tabs">
             <li><a href="#tab1">Informacion Personal</a></li>
 			<li><a href="#tab2">Administrar Usuarios</a></li>
@@ -29,7 +30,7 @@ if($admin = 1){?>
                     <img src="img/perfildef.jpg">
                     <?php echo $usuario?>
                     </div>
-                    <div class="contenidop anuncio3 txtprof">
+                    <div class="contenidop anuncio3 txtprof contenedor">
                     <p>Nombre y Apellido: <?php echo $nombre. " " . $apellido?></p>
                     <p>Correo: <?php echo $correo?></p>
                     <p>Telefono: <?php echo $telefono?></p>
@@ -77,27 +78,51 @@ if($admin = 1){?>
             </div>    
             <table class="table table-bordered">
 					<tr>
-						<th width="10%">Nombre Usuario</th>
-						<th width="30%">ID</th>
-						<th width="10%">Nombre y Apellido</th>
-						<th width="20%">Correo</th>
-                        <th width="10%">Telefono</th>
-                        <th width="10%">Pais</th>
-                        <th width="20%">admins</th>
+						<th width="10%" class="fondogriss">Nombre Usuario</th>
+						<th width="30%" class="fondogriss">ID</th>
+						<th width="10%" class="fondogriss">Nombre y Apellido</th>
+						<th width="20%" class="fondogriss">Correo</th>
+                        <th width="10%" class="fondogriss">Telefono</th>
+                        <th width="10%" class="fondogriss">Pais</th>
+                        <th width="20%" class="fondogriss">admins</th>
                     </tr> 
                     <tr>
                         <?php foreach($fusuarios as $usuario) {?>
 						<td><?php echo $usuario["Usuario"]; ?></td>
 						<td><?php echo $usuario["Idunico"]; ?></td>
-						<td><?php echo $usuario["Nombre"] . '' . $usuario["Apellido"]; ?></td>
+						<td><?php echo $usuario["Nombre"] . ' ' . $usuario["Apellido"]; ?></td>
                         <td><?php echo $usuario["Correo"]; ?></td>
                         <td><?php echo $usuario["Telefono"]; ?></td>
                         <td><?php echo $usuario["Pais"]; ?></td>
-                        <td> <?php echo 'Base:' . $usuario["Estado"]; ?>
-                        <select name="edit" id="pais" value=""> 
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
+                        <td> <?php if($usuario["Usuario"] != 'ADMIN'){switch($usuario["Estado"]){
+                            case 0:
+                                $valora = 'No';
+                            break;
+                            case 1:
+                                $valora = 'Si';
+                            break;
+                            default:
+                            echo 'error basede datos';
+                            break;
+                        }?>
+                        <select name="edit" id="estado"> 
+                                        <option value='<?php $usuario["Estado"] ?>'>predefinodo: <?php echo $valora ?></option>
+                                        <option value="0">No</option>
+                                        <option value="1">Si</option>
                                         </select></td>
+                                        <?php }else{switch($usuario["Estado"]){
+                            case 0:
+                                $valora = 'No';
+                            break;
+                            case 1:
+                                $valora = 'Si';
+                            break;
+                            default:
+                            echo 'error basede datos';
+                            break;
+                        }?>
+                         <?php echo $valora;?></td>
+                    <?php }?>
 					</tr>
                     <?php }?>
                     </tr>
@@ -121,7 +146,9 @@ if($admin = 1){?>
             </form>
 	   </div>
     </div>
-<?php } else if($admin == 0){ ?>
+    <?php break;
+    
+    case 0:?>
     <div class="warp">
 		<ul class="tabs">
             <li><a href="#tab1">Informacion Personal</a></li>
@@ -142,10 +169,37 @@ if($admin = 1){?>
                     </div>
                 </div>
             </article>
-<?php } ?>
+            <form action="includes/fuctions/logout.php" method="POST">
+            <button type="sumbit">Cerrar sesion</button>
+            </form>
+
+    <?php break;
+    default: 
+    var_dump($_SESSION);?>
+<h2>Ocurrio un error</h2>
+<form action="includes/fuctions/logout.php" method="POST">
+            <button type="sumbit">Cerrar sesion</button>
+            </form>
+    <?php break;
+
+}?>
 
 <?php }else{ ?>
 <?php include_once 'includes/templades/header.php';?>
 <h2>Error 404! Page not Found...</h2>
 <?php }?>
+
+<script>	$('ul.tabs li a:first').addClass('active');
+	$('.secciones article').hide();
+	$('.secciones article:first').show();
+
+	$('ul.tabs li a').click(function(){
+		$('ul.tabs li a').removeClass('active');
+		$(this).addClass('active');
+		$('.secciones article').hide();
+
+		var activeTab = $(this).attr('href');
+		$(activeTab).show();
+		return false;
+	});</script>
 <?php include_once 'includes/templades/footer.php'?>
