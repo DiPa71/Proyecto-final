@@ -21,7 +21,7 @@ switch($estado){
 		<ul class="tabs">
             <li><a href="#tab1">Informacion Personal</a></li>
 			<li><a href="#tab2">Administrar Usuarios</a></li>
-            <li><a href="#tab3">Administarar Productos</a></li>
+            <li><a href="#tab3">Administrar Productos</a></li>
 		</ul>
 		<div class="secciones">
 			<article id="tab1">
@@ -138,16 +138,70 @@ switch($estado){
         </div>
             </article>
             <article id="tab3">
+            <h2>Agregar Productos</h2>
+            <hr>
+                <form action="includes/fuctions/alta.php" method="post" enctype="multipart/form-data">
+                    <label>Imagen del Productos</label><input name="p_img" type="file" class=""/> 
+                    <label>Nombre:</label> <input name="n_producto" type="text"/>
+                    <label>Descripcion:</label> <textarea  name="d_producto"></textarea>
+                    <label>Precio:</label> <input type="numeric" name="p_producto"/>
+                    <label>Etiquetas:</label> <input type="text" name="etiquetas"/>
+                    <button type="sumbit">Agregar producto</button>
+                </form>
+            <h2>Dar de baja productos</h2>
+            <hr>
+            <table class="table-bordered">
+					<tr>
+						<th width="70%" class="fondogriss">Producto</th>
+                        <th width="20%" class="fondogriss">Precio</th>
+                        <th width="10%" class="fondogriss">--</th>
 
+                    </tr> 
+                    <tr>
+                        <?php
+                    try{
+            require_once('includes/fuctions/db.php');
+            $sql = " SELECT producto, precio FROM productos";
+            $resultado = $conn->query($sql);
+        }catch(\Exception $e){
+            echo $e->getMessage();
+        }
+        ?>
+    <div class="informacion">
+        <div class="contenidop anuncio3 diplay">
+
+                        <?php //ordenando Los valores de la tabla
+                            $fproductosa= array();
+                            while($productos = $resultado->fetch_assoc()){
+                                $producto = array(
+                                    'Producto' => $productos['producto'],
+                                    'Precio' => $productos['precio'],
+                                    );
+                                $fproductosa[] = $producto;?>
+                                
+                                        <?php }//fin while?>
+                        <?php foreach($fproductosa as $producto) {?>
+						<td><?php echo $producto["Producto"]; ?></td>
+						<td><?php echo $producto["Precio"]; ?></td>
+                        <td>
+                            <form action="includes/fuctions/eliminardebase.php" method="post">
+                            <button type="submit" name="btn_eliminar" value="<?php echo $producto["Producto"] ?>" class="remover-carrito"><i class="crossn fa fa-times-circle"></i></button>
+                            </form>
+                        </td>
+					</tr>
+                        <?php }?>
+                </table>
+
+        </div>
 
             </article>
             <form action="includes/fuctions/logout.php" method="POST">
             <button type="sumbit">Cerrar sesion</button>
             </form>
-	   </div>
+       </div>
     </div>
-    <?php break;
-    
+    <?php
+    break;
     case 0:?>
     <div class="warp">
 		<ul class="tabs">

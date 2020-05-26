@@ -27,19 +27,15 @@ if(isset($_SESSION['usuario'])){
 
     <main class="seccion contenedor">
         <h2 class="fw-300 centrar-texto">Nuestra selección</h2>
-
+    <hr>
         <div class="contenedor-anuncios">
             <div class="anuncio">
                 <img src="img/anuncio1.jpg" alt="Tamal de piña">
                 <div class="contenido-anuncio">
                     <h3>Piña exótica</h3>
                     <p>Exquisito tamal con base de piña de las islas Kawaii</p>
-                    <p class="precio">$4 USD</p>
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
                 </div>
             </div>
@@ -49,13 +45,9 @@ if(isset($_SESSION['usuario'])){
                 <div class="contenido-anuncio">
                     <h3>Habanero spicy</h3>
                     <p>Delicia culinaria, elaborada a base de chile habanero con toques de olivo</p>
-                    <p class="precio">$5.50 USD</p>
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
                 </div>
             </div>
@@ -65,20 +57,12 @@ if(isset($_SESSION['usuario'])){
                 <div class="contenido-anuncio">
                     <h3>Tamal al pastor </h3>
                     <p>Recordemos dos de los mejores platillos de la comida mexicana con este homenaje</p>
-                    <p class="precio">$1.50 USD "OFERTA"</p>
 
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
             </div>
-        </div>
-
-        <div class="ver-todas">
-            <button onclick="window.location.href='/anuncios.html'" class="">Ver Todos</button>
         </div>
     </main>
 
@@ -88,51 +72,6 @@ if(isset($_SESSION['usuario'])){
             <p>No te limites! tenemos una gran variedad de sabores, animate a probarlo</p>
         </div>
     </section>
-
-    <div class="seccion-inferior contenedor seccion">
-        <section class="blog">
-            <h3 class="centrar-texto fw-300">Nuestro Blog</h3>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog1.jpg" alt="Entrada de blog">
-                </div>
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Recomendaciones de nuestro chef</h4>
-                    </a>
-                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Juan </span> </p>
-                    <p>¿Consejos para comer diferene? Nuestro chef especializado tiene la respuesta que buscas</p>
-                </div>
-            </article>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog2.jpg" alt="Entrada de blog">
-                </div>
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Franquicias</h4>
-                    </a>
-                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Pablo </span> </p>
-                    <p>Adquiere una franquicia de Tolito Inc. ahora mismo, ¡enterate como!</p>
-                </div>
-            </article>
-        </section>
-
-        <section class="testimoniales">
-            <h3 class="centrar-texto fw-300">Testimoniales</h3>
-            <div class="testimonial">
-
-                <blockquote>
-                    El personal se porto increiblemente bien, atención al cliente de 10. Sabores únicos y exquisitos, complementos de bebidas exquisitas y a temperatura perfecta, volveré sin duda.
-                </blockquote>
-                <p>- Ian Arias Dias</p>
-            </div>
-        </section>
-
-    </div>
-    
 <?php }else{
     include_once 'includes/templades/header_index.php';?>
 	
@@ -170,12 +109,8 @@ if(isset($_SESSION['usuario'])){
                 <div class="contenido-anuncio">
                     <h3>Piña exótica</h3>
                     <p>Exquisito tamal con base de piña de las islas Kawaii</p>
-                    <p class="precio">$4 USD</p>
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -185,13 +120,9 @@ if(isset($_SESSION['usuario'])){
                 <div class="contenido-anuncio">
                     <h3>Habanero spicy</h3>
                     <p>Delicia culinaria, elaborada a base de chile habanero con toques de olivo</p>
-                    <p class="precio">$5.50 USD</p>
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -201,14 +132,10 @@ if(isset($_SESSION['usuario'])){
                 <div class="contenido-anuncio">
                     <h3>Tamal al pastor </h3>
                     <p>Recordemos dos de los mejores platillos de la comida mexicana con este homenaje</p>
-                    <p class="precio">$1.50 USD "OFERTA"</p>
 
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/carrito.html'" class="colorbtna">Añadir a Carrito</button>
-                    </div>
-                    <div class="corazonmegusta">
-                        <button onclick="" class="megusta"><i class="fa fa-heart"></i></button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
                     </div>
             </div>
         </div>
@@ -224,49 +151,5 @@ if(isset($_SESSION['usuario'])){
             <p>No te limites! tenemos una gran variedad de sabores, animate a probarlo</p>
         </div>
     </section>
-
-    <div class="seccion-inferior contenedor seccion">
-        <section class="blog">
-            <h3 class="centrar-texto fw-300">Nuestro Blog</h3>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog1.jpg" alt="Entrada de blog">
-                </div>
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Recomendaciones de nuestro chef</h4>
-                    </a>
-                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Juan </span> </p>
-                    <p>¿Consejos para comer diferene? Nuestro chef especializado tiene la respuesta que buscas</p>
-                </div>
-            </article>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog2.jpg" alt="Entrada de blog">
-                </div>
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Franquicias</h4>
-                    </a>
-                    <p>Escrito el: <span> 03/04/2020 </span> por: <span> Pablo </span> </p>
-                    <p>Adquiere una franquicia de Tolito Inc. ahora mismo, ¡enterate como!</p>
-                </div>
-            </article>
-        </section>
-
-        <section class="testimoniales">
-            <h3 class="centrar-texto fw-300">Testimoniales</h3>
-            <div class="testimonial">
-
-                <blockquote>
-                    El personal se porto increiblemente bien, atención al cliente de 10. Sabores únicos y exquisitos, complementos de bebidas exquisitas y a temperatura perfecta, volveré sin duda.
-                </blockquote>
-                <p>- Ian Arias Dias</p>
-            </div>
-        </section>
-
-    </div>
     <?php } ?>
     <?php include_once 'includes/templades/footer.php'?>

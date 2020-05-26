@@ -6,69 +6,50 @@ include_once 'includes/templades/headerloget.php';
 include_once 'includes/templades/header.php';
 }?>
 
-    <h1 class="fw-300 centrar-texto">Contacto</h1>
-    <img src="img/destacada3.jpg" alt="Imagen Principal">
-    <hr>
-
+<img src="img/destacada3.jpg" alt="Imagen Principal">
     <main class="contenedor seccion contenido-centrado">
         <h2 class="fw-300 centrar-texto">Llena el formulario de Contacto</h2>
-
-        <form class="contacto" action="">
+        <hr>
+        
+        <?php     if(isset($_GET['mensaje'])){
+        if($_GET['mensaje'] == "enviado"){
+            echo '<center>
+            <p class="errores">¡Listo nosotros nos pondremos en contacto!</p>
+            <p><img src="img/enviado.png" alt="enviado"></p> </center>';
+        }
+    } ?><hr>
+        <form class="contacto" action="includes/fuctions/Ecorreo.php" method="post">
             <fieldset>
                 <legend>Información Personal</legend>
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Tu Nombre">
+                <input type="text" id="nombre" placeholder="Tu Nombre" name="nombre" required>
 
                 <label for="email">E-mail: </label>
-                <input type="email" id="email" placeholder="Tu Correo electrónico" required>
+                <input type="email" id="email" placeholder="Tu Correo electrónico" name="correo" required>
 
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" placeholder="Tu Teléfono" required>
+                <input type="tel" id="telefono" placeholder="Tu Teléfono" name="tel" required>
 
                 <label for="mensaje">Mensaje: </label>
-                <textarea  id="mensaje"></textarea>
+                <textarea  id="mensaje" name="mensaje" required></textarea>
 
             </fieldset>
                 
 
             <fieldset>
-                <legend>Informacion Perzonalizada</legend>
+                <legend>Informacion Personalizada</legend>
                 <label for="opciones">Vende o Compra</label>
-                <select id="opciones">
+                <select id="opciones" name="opc" required>
                     <option value="" disabled selected>-- Seleccione --</option>
                     <option value="Compra">Compra</option>
                     <option value="Vende">Vende</option>
                 </select>
 
                 <label for="cantidad">Cantidad:</label>
-                <input type="number" min="0" max="100" step="5">
+                <input type="number" min="0" max="100"  name="cantidad">
             </fieldset>
 
-            <fieldset>
-                <legend>Contacto</legend>
-
-                <p>Como desea ser Contactado:</p>
-
-                <div class="forma-contacto">
-                    <label for="telefono">Teléfono</label>
-                    <input type="radio" name="contacto" value="telefono" id="telefono">
-
-                    <label for="correo">E-mail</label>
-                    <input type="radio" name="contacto" value="correo" id="correo">
-                </div>
-
-                <p>Si eligió Teléfono, elija la fecha y la hora</p>
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha">
-
-                <label for="hora">Hora:</label>
-                <input type="time" id="hora" min="09:00" max="18:00">
-
-     
-            </fieldset>
-
-            <input type="submit" value="Enviar" class="boton boton-verde">
-
+            <button type="sumbit" value="Envialo (si te atreves :P)">Enviar</button>
         </form>
     </main>
     <?php include_once 'includes/templades/footer.php'?>

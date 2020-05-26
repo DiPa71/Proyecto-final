@@ -57,9 +57,13 @@ include_once 'includes/templades/headerloget.php';
                     <button type="sumbit" name="añadir_carro"class="colorbtna" value="agregar">Añadir a Carrito</button>
                     </div>
                     </form>
-                    <form action="includes/fuctions/favoritos.php">
+                    <form action="favoritos.php?pid=<?php echo $producto['Id'];?>" method="POST">
+                    <input type="hidden" name="pid" id="" value="<?php echo $producto['Id']; ?>">
+                    <input type="hidden" name="producto" id="" value="<?php echo $producto['Producto']; ?>">
+                    <input type="hidden" name="precio" id="" value="<?php  echo $producto['Precio']; ?>">
+                    <input type="hidden" name="descripcion" id="" value="<?php  echo $producto['Descripcion']; ?>">
                     <div class="corazonmegusta">
-                        <button type="sumbit" name="añadir_favoritos" class="megusta" value="add to fav"><i class="fa fa-heart"></i></button>
+                        <button type="sumbit" name="añadir_fav" class="megusta" value="agregar"><i class="fa fa-heart"></i></button>
                     </div>
                     </form>
                 </div>
