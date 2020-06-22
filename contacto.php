@@ -1,10 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario'])){
-include_once 'includes/templades/headerloget.php';
-}else{
-include_once 'includes/templades/header.php';
-}?>
+include_once 'includes/templades/headerloget.php';?>
 
 <img src="img/destacada3.jpg" alt="Imagen Principal">
     <main class="contenedor seccion contenido-centrado">
@@ -52,4 +49,8 @@ include_once 'includes/templades/header.php';
             <button type="sumbit" value="Envialo (si te atreves :P)">Enviar</button>
         </form>
     </main>
+    <?php }else{
+include_once 'includes/templades/header.php';?>
+<p>Inicie session para obtener acceso</p>
+<?php }?>
     <?php include_once 'includes/templades/footer.php'?>

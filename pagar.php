@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['usuario'])){
     include_once('includes/fuctions/db.php');
     include_once 'includes/templades/headerloget.php';?>
@@ -40,7 +41,7 @@ if(isset($_SESSION['usuario'])){
     
         mysqli_stmt_bind_param($stmt, "issssds", $null, $sessionid, $paypal, $date, $correo, $tpago, $estado);
         mysqli_stmt_execute($stmt);
-        echo "<script>alert('Se realizo su pedido, Aceptar para abrir la interfaz de paypal');</script>";
+        echo "<script>alert('Datos admitidos, Pago Realizado');</script>";
         exit();
     }?> 
 

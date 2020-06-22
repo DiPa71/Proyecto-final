@@ -63,12 +63,11 @@ include 'includes/fuctions/carritof.php';
                                             <?php }?>
                                             </div>
                                             <hr>
-                                            <form action="pagar.php" method="POST">
+                                            <form action="pago.php" method="POST">
                                             <input type="hidden" value='<?php $_SESSION['correo'];?>'>
                                             <input type="hidden" value='<?php $total?>'>
                                             <p>Total a Pagar:<div id="precio"><?php echo number_format($total,2);?></div></p>
                                             <button type="sumbit" name="pago">Realizar Compra</button>
-                                            <?php $_SESSION['carrito'][] = $total; ?>
                                         </form>
                                         </div>
                                     
@@ -76,10 +75,17 @@ include 'includes/fuctions/carritof.php';
                     </div>  
             </section>
     </div>
+
+<?php
+}else{
+include_once 'includes/templades/header.php';?>
+<div class="alert alert-danger ">
+    Debes iniciar sesesion para tener acceso a esta pestaña...
+    <form action="perfill.php">
+    <button type="sumbit" name="">Iniciar Sesion</button>
+    </form>
+</div>
+<?php }?>
     <div class="rango-foot">
     <?php include_once 'includes/templades/footer.php'?>
     </div>
-<?php
-}else{
-include_once 'includes/templades/header.php';
-}?>

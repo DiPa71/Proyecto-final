@@ -27,8 +27,7 @@ include 'includes/fuctions/favf.php';
                                         <td>
                                         <form action="" method="post">
                                         <input type="hidden" name="id" value="<?php echo $producto['Id']; ?>">
-                                        <button type="submit" name="añadir_fav" value="eliminar" class="remover-carrito"><i class="crossn fa fa-times-circle"></i></button>
-                                        </form>>
+                                        <button type="submit" name="añadir_fav" value="eliminar" class="remover-carrito"><i class="fa fa-heart"></i></button>
                                         </form>
                                         </td>
                                     </tr>
@@ -38,10 +37,17 @@ include 'includes/fuctions/favf.php';
                   
             </section>
     </div>
+
+<?php
+}else{
+include_once 'includes/templades/header.php';?>
+<div class="alert alert-danger ">
+    Debes iniciar sesesion para tener acceso a esta pestaña...
+    <form action="perfill.php">
+    <button type="sumbit" name="">Iniciar Sesion</button>
+    </form>
+</div>
+<?php }?>
     <div class="rango-foot">
     <?php include_once 'includes/templades/footer.php'?>
     </div>
-<?php
-}else{
-include_once 'includes/templades/header.php';
-}?>

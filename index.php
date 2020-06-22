@@ -74,9 +74,7 @@ if(isset($_SESSION['usuario'])){
     </section>
 <?php }else{
     include_once 'includes/templades/header_index.php';?>
-	
-
-    <section class="contenedor seccion">
+	 <section class="contenedor seccion">
         <h2 class="fw-300 centrar-texto">¿Quienes somos?</h2>
 
         <div class="iconos-nosotros">
@@ -102,7 +100,7 @@ if(isset($_SESSION['usuario'])){
 
     <main class="seccion contenedor">
         <h2 class="fw-300 centrar-texto">Nuestra selección</h2>
-
+    <hr>
         <div class="contenedor-anuncios">
             <div class="anuncio">
                 <img src="img/anuncio1.jpg" alt="Tamal de piña">
@@ -110,7 +108,7 @@ if(isset($_SESSION['usuario'])){
                     <h3>Piña exótica</h3>
                     <p>Exquisito tamal con base de piña de las islas Kawaii</p>
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
                 </div>
             </div>
@@ -122,7 +120,7 @@ if(isset($_SESSION['usuario'])){
                     <p>Delicia culinaria, elaborada a base de chile habanero con toques de olivo</p>
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
                 </div>
             </div>
@@ -135,13 +133,9 @@ if(isset($_SESSION['usuario'])){
 
 
                     <div class="botonamarillo">
-                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Añadir a Carrito</button>
+                        <button onclick="window.location.href='/anuncios.php'" class="colorbtna">Ver</button>
                     </div>
             </div>
-        </div>
-
-        <div class="ver-todas">
-            <button onclick="window.location.href='/anuncios.html'" class="">Ver Todos</button>
         </div>
     </main>
 

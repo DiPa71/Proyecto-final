@@ -47,6 +47,8 @@ if(isset($_SESSION['usuario'])){
                         }
                         else if($_GET['error'] == "ContraseñaErronea"){
                             echo '<p class="errores">Contraseña o Usuario no coinciden, Favor de verificar</p>';
+                        }else if($_GET['error'] == "inidicio_sesion"){
+                            echo '<p class="errores">Registrate o Inicia sesion, para tener todas las funciones.</p>';
                         }
                         
                     }
